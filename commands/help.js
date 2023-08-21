@@ -1,0 +1,61 @@
+exports.data = {
+  names:['help']
+}
+
+exports.handle = (client,msg,args)=>{
+  msg.reply(client.fs.readFileSync("~/blob-bot/README.md"))
+}
+/*
+you manage your blob on a virtual plot
+blot eats 1 mango every 12 hours
+
+> **COMMANDS**
+bot prefix is b!
+if unspecified, *direction* can be left/right/up/down or just l/r/d/u
+
+> plot/p
+view your plot and inventory
+
+> move/mv/m *direction* *amount?*
+move in *direction*
+amount is optional, defaults to 1
+
+> searchfood/sf
+collects mangos from 8 tiles around you
+
+> plant *direction*
+plants a sapling in *direction*
+
+> chopwood/chop/cw *direction*
+chops the tree in *direction*, giving 1-2 wood (50/50) and 0-1 saplings (50/50)
+
+> craft *recipe*
+currently only 1 recipe:
+**plank**: wood -> 2x plank
+
+> sell *item* *amount?*
+sell *item*, *amount* defaults to 1
+prices:
+- mango - 6$
+- wood - 9$
+- sapling - 6$
+- plank - 7$
+
+> buy *item* *amount?*
+buy *item*, *amount* defaults to 1
+prices:
+- mango - 10$
+- wood - 15$
+- sapling - 10$
+- plank - 10$
+
+> explore/ex *direction*
+*direction* can be right/down/horizonal/vertical or r/d/h/v
+expanding costs 10$ per tile
+new tiles have 25% chance of containing a tree
+maximum size of 15x9
+
+> revive/rev *@user*
+revive *@user*'s blob
+costs 10 mangos
+*/

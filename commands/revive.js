@@ -1,8 +1,7 @@
-const fs = require('fs')
 exports.data = {
   names:['revive','rev'],
   args:[
-    {type:'string',check:(c,m,a)=>/^<@\d+>$/.test(a)&&fs.existsSync(`user_data/${a.slice(2,-1)}.json`)}
+    {type:'string',check:(c,m,a)=>/^<@\d+>$/.test(a)&&client.fs.existsSync(`user_data/${a.slice(2,-1)}.json`)}
   ]
 }
 exports.handle = (client,msg,args)=>{
