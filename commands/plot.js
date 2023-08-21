@@ -1,17 +1,3 @@
-let emojis = {
-  "empty": "<:em:1142832629637451819>",
-  "tree_0":"<:pa:1142917740970115154>",
-  "tree_1":"<:tr:1142917773639557210>",
-  "tree_2":"<:1m:1142917674746253433>",
-  "tree_3":"<:2m:1142917674746253433>",
-  "blob_a":"<:ba:1142843061647462512>",
-  "blob_d":":skull:",
-  "mango":"<:ma:1142843198679568425>",
-  "wood":"<:lo:1142843099735924836>",
-  "sapling":":seedling:",
-  "plank":"<:pl:1142843176189689926>"
-}
-
 exports.data = {
   names:['plot','p']
 }
@@ -30,8 +16,4 @@ exports.handle = (client,msg,args)=>{
   }
   out += client.funcs.emojifyplot(data.plot);
   msg.reply(out);
-}
-
-exports.init = (client) => {
-  client.data.emojis = emojis;
 }

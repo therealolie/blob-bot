@@ -1,4 +1,5 @@
 require('express')().get("/",(a,b)=>{b.send("hello world!")}).listen(3000,()=>console.log('host working'))
+require('node:process').on('uncaughtException',e=>console.log(e)) 
 
 const { Client } = require('discord.js');
 const client = new Client({ intents: 37377, partials: [1, 3] })
