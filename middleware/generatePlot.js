@@ -1,3 +1,5 @@
+const tickTime = 12*60*60*1000;
+//12 hours - 43200000ms 
 const {floor,random} = require('math')
 
 function randint(min,max){
@@ -27,7 +29,7 @@ exports.onMsg = (client,msg) => {
       plot[x][y] = {type:"blob",alive:true};
       break;
     }
-    let data = {plot:plot,money:100,inventory:{},time:1*new Date()};
+    let data = {plot:plot,money:100,inventory:{},time:floor(1*new Date()/tickTime)};
     client.funcs.save(msg.author.id,data);
   }
 }

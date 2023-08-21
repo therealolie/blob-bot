@@ -1,10 +1,11 @@
 const tickTime = 12*60*60*1000;
-//12 hours - 43200000ms
-const {random} = require('math')
+//12 hours - 43200000ms 
+const { floor, random } = require('math')
 function updatePlot(client,id){
   let data = client.funcs.load(id);
-  plot = data.plot
-  while(data.time+tickTime<1*new Date()){
+  if(data.time>1690000000000)data.time=floor(data.time/tickTime);
+  plot = data.plot;
+  while(data.time<floor(1*new Date()/tickTime)){
     if(data.inventory['mango']>0){
       data.inventory['mango']-=1;
     }else{
@@ -17,7 +18,7 @@ function updatePlot(client,id){
         if(p.type=="tree"&&p.stage<3)
           if(random()>0.75)p.stage+=1;
       }
-    data.time+=tickTime;
+    data.time+=1;
   }
   client.funcs.save(id,data)
 }
