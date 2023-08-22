@@ -15,15 +15,15 @@ exports.handle = (client,msg,args)=>{
   let new_cells = dir?data.plot.length:data.plot[0].length;
   let size = dir?data.plot[0].length:data.plot.length;
   for(let i=0;i<args[1];i++){
-    if(data.money<new_cells*10){
-      msg.reply('You dont have enough money!');
-      return;
-    }
     if(dir?size>=15:size>=9){
       msg.reply('Maxxed out in this direction!');
       return;
     }
-    data.money -= new_cells*10;
+    if(data.money<new_cells*5){
+      msg.reply('You dont have enough money!');
+      return;
+    }
+    data.money -= new_cells*5;
     if(dir == 0){
       data.plot.push([])
       for(let a=0;a<new_cells;a++){

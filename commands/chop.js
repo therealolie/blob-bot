@@ -1,5 +1,5 @@
 exports.data = {
-  names:['chopwood','chop','cw'],
+  names:['chopwood','chop','cw','c'],
   args:[
     {type:'string',check:(c,m,a)=>'lrud'.includes(a)||['up','down','left','right'].includes(a)},
   ],

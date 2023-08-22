@@ -13,7 +13,7 @@ function updatePlot(client,id){
       plot[x][y].alive = false;
     }
     for(let a in plot)
-      for(let b in plot){
+      for(let b in plot[a]){
         let p = plot[a][b];
         if(p.type=="tree"&&p.stage<3)
           if(random()>0.75)p.stage+=1;

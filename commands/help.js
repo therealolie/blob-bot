@@ -3,7 +3,7 @@ exports.data = {
 }
 
 exports.handle = (client,msg,args)=>{
-  msg.reply(client.fs.readFileSync("~/blob-bot/README.md"))
+  msg.reply(""+client.fs.readFileSync("/home/runner/blob-bot/README.md"))
 }
 /*
 you manage your blob on a virtual plot

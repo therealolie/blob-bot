@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/node": "^18.0.6",
     "config.json": "^0.0.4",
+    "cors": "^2.8.5",
     "discord.js": "^14.7.1",
     "express": "^4.18.2",
     "forever-monitor": "^3.0.3",

