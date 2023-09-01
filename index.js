@@ -62,13 +62,12 @@ client.on('messageCreate', msg => {
   }
   
   msg.author.data = client.funcs.load(msg.author.id);
-  
-  let cmd = msg.content.split(' ')[0].slice(2).toLowerCase();
+  let cmd = msg.content.slice(2).trim().split(/ +/)[0].toLowerCase();
   if(!(cmd in commands)){
     msg.reply('command not found!')
     return;
   }
-  let args = msg.content.split(' ').slice(1);
+  let args = msg.content.slice(2).trim().split(/ +/).slice(1);
   if(command_data[cmd].require_alive){
     let blob = client.funcs.findBlob(plot);
     if(msg.author.data.plot[blob[0]][blob[1]].alive==false){
