@@ -1,3 +1,8 @@
+WARNING : The space will not work if msg.content cannot be modified
+In that case another string may need to be made for that
+
+----------------------------------------------------
+
 you manage your blob on a virtual plot
 
 a tick happens at <t:0:t> and <t:43200:t> (your timezone),

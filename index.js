@@ -55,6 +55,10 @@ client.on('ready', () => {
 
 
 client.on('messageCreate', msg => {
+  while (msg.content.includes("  ")) {
+    msg.content = msg.content.replace("  ", " ")
+  }
+  if(msg.content.startsWith('b! ')) msg.content = msg.content.slice(0,2) + msg.content.slice(3, undefined)
   if(!msg.content.startsWith('b!')) return;
 
   for(let a of middleware){
