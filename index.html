@@ -3,7 +3,8 @@
     Hello world!
   </body>
   <script>
-    setInterval((async ()=>{
+    let test;
+    setTimeout((async ()=>{
       let response = await fetch('https://kerfus-bot.0lie.repl.co/bot-list');
       let bots = await response.json()
       for(let a of bots)fetch(a)

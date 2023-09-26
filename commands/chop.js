@@ -18,20 +18,16 @@ exports.handle = (client,msg,args)=>{
     msg.reply('thats not a tree');
     return;
   }
-  if(!e.stage){
-    msg.reply('not grown yet!');
-    return;
-  }
   data.inventory.wood = data.inventory.wood ?? 0;
+  let gain = e.stage?floor(random()*2+1):0;
   delete e.stage;
   e.type = 'empty'
-  let gain = floor(random()*2+1)
   data.inventory.wood += gain;
-  let out = `You chopped down a tree and got **${gain}** pieces of wood!`
+  let out = gain?`You chopped down a tree and got **${gain}** pieces of wood!`:`You chopped down a sapling!`
   if(random()>0.5){
     data.inventory.sapling = data.inventory.sapling ?? 0;
     data.inventory.sapling += 1;
-    out += '\nYou also recovered one sapling from the tree!';
+    out += gain?'\nYou also recovered one sapling from the tree!':`\nYou recovered it!`;
   }
   msg.reply(out);
 }

@@ -2,11 +2,9 @@ const { Client } = require('discord.js');
 const client = new Client({ intents: 37377, partials: [1, 3] })
 client.fs = require('fs');
 
-//require('https').get('https://kerfus-bot.0lie.repl.co/keepalive',()=>{})
 require('express')()
   .use(require('cors')({origin:'*'}))
   .get("/",(a,b)=>{
-    require('https').get('https://kerfus-bot.0lie.repl.co/keepalive',()=>{})
     b.send(""+client.fs.readFileSync('index.html'))
   })
   .listen(3000,()=>console.log('host working'))

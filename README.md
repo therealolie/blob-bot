@@ -32,6 +32,8 @@ plants a sapling in *direction*
 
 chops the tree in *direction*, giving 1-2 wood (50/50) and 0-1 saplings (50/50)
 
+Chopping down saplings doesnt give wood
+
 > craft *recipe*
 
 currently only 1 recipe:

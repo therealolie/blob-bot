@@ -1,5 +1,5 @@
 exports.data = {
-  names:['help']
+  names:['help','h']
 }
 
 exports.handle = (client,msg,args)=>{
