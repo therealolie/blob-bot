@@ -10,6 +10,8 @@ bot prefix is b!
 
 if unspecified, *direction* can be left/right/up/down or just l/r/d/u
 
+*parameter**?*** means its optional, if not specified defaults to 1
+
 > plot/p
 
 view your plot and inventory
@@ -17,8 +19,6 @@ view your plot and inventory
 > move/mv/m *direction* *amount?*
 
 move in *direction*
-
-amount is optional, defaults to 1
 
 > searchfood/sf
 
@@ -34,7 +34,7 @@ chops the tree in *direction*, giving 1-2 wood (50/50) and 0-1 saplings (50/50)
 
 Chopping down saplings doesnt give wood
 
-> craft *recipe*
+> craft/c *recipe* *amount?*
 
 currently only 1 recipe:
 
@@ -42,9 +42,9 @@ currently only 1 recipe:
 
 > sell *item* *amount?*
 
-sell *item*, *amount* defaults to 1
+sell *item*
 
-prices:
+sell prices:
 - mango - 6$
 - wood - 9$
 - sapling - 6$
@@ -52,9 +52,9 @@ prices:
 
 > buy *item* *amount?*
 
-buy *item*, *amount* defaults to 1
+buy *item*
 
-prices:
+buy prices:
 - mango - 10$
 - wood - 15$
 - sapling - 10$

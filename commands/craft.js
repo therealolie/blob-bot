@@ -2,7 +2,7 @@ const recipes = {
   "plank": [{"wood":1},{"plank":2}]
 }
 exports.data = {
-  names:['craft'],
+  names:['craft','c'],
   args:[
     {type:'string',check:(c,m,a)=>a in recipes},
     {type:'int',check:(c,m,a)=>a>0,default:1}

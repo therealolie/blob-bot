@@ -1,5 +1,5 @@
-user_data
+user_data/
 replit.nix
 .replit
 package-lock.json
-node_modules
+node_modules/
