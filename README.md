@@ -24,7 +24,7 @@ move in *direction*
 
 collects mangos from 8 tiles around you
 
-> plant *direction*
+> place *direction*
 
 plants a sapling in *direction*
 

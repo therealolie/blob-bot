@@ -68,8 +68,8 @@ client.on('messageCreate', msg => {
 	}
 	let args = msg.content.slice(2).trim().split(/ +/).slice(1);
 	if(command_data[cmd].require_alive){
-		let blob = client.funcs.findBlob(plot);
-		if(msg.author.data.plot[blob[0]][blob[1]].alive==false){
+		let blob = client.funcs.findBlob(msg.author.data.plots);
+		if(msg.author.data.plots[blob[0]][blob[1]][blob[2]].alive==false){
 			msg.reply('Your blob is dead! Ask someone to b!revive you.\nMake sure to have enough mangos next time.');
 			return;
 		}

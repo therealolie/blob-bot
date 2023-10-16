@@ -5,13 +5,14 @@ exports.data = {
 
 exports.handle = (client,msg,args)=>{
   let data = msg.author.data
-  let blob = client.funcs.findBlob(data.plot);
+  let blob = client.funcs.findBlob(data.plots);
   data.inventory.mango = data.inventory.mango ?? 0;
   let gain = 0;
+let plot = data.plots[blob[0]]
   for(let a=-1;a<2;a++)for(let b=-1;b<2;b++){
-    if(blob[0]+a<0||blob[0]+a>=data.plot.length)continue;
-    if(blob[1]+b<0||blob[1]+b>=data.plot[0].length)continue;
-    let e = data.plot[blob[0]+a][blob[1]+b];
+    if(blob[1]+a<0||blob[1]+a>=plot.length)continue;
+    if(blob[2]+b<0||blob[2]+b>=plot[0].length)continue;
+    let e = plot[blob[1]+a][blob[2]+b];
     if(e.type!='tree')continue;
     if(e.stage<2)continue;
     data.inventory.mango+=e.stage-1;
