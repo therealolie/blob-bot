@@ -53,7 +53,8 @@ client.on('ready', () => {
 
 
 client.on('messageCreate', msg => {
-	if(!msg.content.startsWith('b!')) return;
+  const prefixes = ['b!','b1']
+  if(prefixes.every(e=>!msg.content.startsWith(e))) return;
 
 	for(let a of middleware){
 		a(client,msg);

@@ -29,7 +29,7 @@ exports.onMsg = (client,msg) => {
       plot[x][y] = {type:"blob",alive:true};
       break;
     }
-    let data = {plots:[plot],money:100,inventory:{},time:floor(1*new Date()/tickTime)};
+    let data = {plot:plot,money:100,inventory:{},time:floor(1*new Date()/tickTime)};
     client.funcs.save(msg.author.id,data);
   }
 }
