@@ -7,8 +7,8 @@ exports.data = {
 exports.handle = (client,msg,args)=>{
   client.funcs.updatePlot(client,args[0].slice(2,-1));
   let data = client.funcs.load(args[0].slice(2,-1));
-  let temp = client.funcs.findBlob(data.plot);
-  let blob = data.plot[temp[0]][temp[1]];
+  let temp = client.funcs.findBlob(data.plots);
+  let blob = data.plots[temp[0]][temp[1]][temp[2]];
   if(blob.alive){
     msg.reply("This user's blob hasn't died!");
     return;

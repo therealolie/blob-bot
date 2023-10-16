@@ -7,10 +7,11 @@ exports.data = {
   require_alive:true
 }
 exports.handle = (client,msg,args)=>{
-  let plot = msg.author.data.plot;
+    let blob = client.funcs.findBlob(msg.author.data.plots);
+  let plot = msg.author.data.plots[blob[0]];
   dir = ({'l':[0,-1],'r':[0,1],'u':[-1,0],'d':[1,0]})[args[0][0]];
   for(let a=0;a<args[1];a++){
-    let blob = client.funcs.findBlob(plot);
+    let blob = client.funcs.findBlob(msg.author.data.plots).slice(1);
     let next = [blob[0]+dir[0],blob[1]+dir[1]];
     if(next[0]<0||next[0]>=plot.length)break;
     if(next[1]<0||next[1]>=plot[0].length)break;
